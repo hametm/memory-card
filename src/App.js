@@ -1,11 +1,11 @@
 import React from "react";
-import Cards from "./components/Cards";
+import Game from "./components/Game";
 
 function App() {
   return (
     <div className="App">
       <h1>Memory Game</h1>
-      <Cards />
+      <Game />
     </div>
   );
 }

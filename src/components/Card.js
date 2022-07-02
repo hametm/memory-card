@@ -4,7 +4,9 @@ import Scoreboard from "./Scoreboard";
 const Card = (props) => {
 
     return (
-        <button onClick={() => props.onBtnClick(props.name)}>{props.name}</button>
+        <div id="cardContainer">
+            <img className="card" src={props.src} onClick={() => props.onCardClick(props.name)} alt="rice" />
+        </div>
     );
 
 

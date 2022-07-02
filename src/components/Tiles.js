@@ -63,6 +63,7 @@ const Tiles = (props) => {
             setScore(score + 1);
         }
         setTally1(tally1 + 1);
+        displayRandomOrder();
     }
 
     const onTile2Clicked = () => {
@@ -72,6 +73,7 @@ const Tiles = (props) => {
             setScore(score + 1);
         }
         setTally2(tally2 + 1);
+        displayRandomOrder();
     }
 
     const onTile3Clicked = () => {
@@ -81,27 +83,42 @@ const Tiles = (props) => {
             setScore(score + 1);
         }
         setTally3(tally3 + 1);
+        displayRandomOrder();
     }
 
-    // const displayRandomOrder = () => {
-    //     const tile1 = <button onClick={onTile1Clicked}>Tile1</button>
-    //     const tile2 = <button onClick={onTile2Clicked}>Tile2</button>
-    //     const tile3 = <button onClick={onTile3Clicked}>Tile3</button>
-    //     let randomNumberArray = [0, 1, 2];
-    //     let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const displayRandomOrder = () => {
+        let randomNumberArray = [0, 1, 2];
+        let displayArray = [];
         
-    //     let tileArray = [tile1, tile2, tile3]
-    //     tileArray[0].indexOf() = randomNumber;
+        let randomNumber1 = Math.floor(Math.random() * 3);
+        let actualNumber1 = randomNumberArray[randomNumber1];
+        randomNumberArray.splice(randomNumber1, 1);
+      
+        let randomNumber2 = Math.floor(Math.random() * 2);
+        let actualNumber2 = randomNumberArray[randomNumber2];
+        randomNumberArray.splice(randomNumber2, 1);
+      
+        let randomNumber3 = randomNumberArray[0];
+        let actualNumber3 = randomNumber3;
         
+        displayArray[actualNumber1] = <button onClick={onTile1Clicked}>Tile1</button>;
+        displayArray[actualNumber2] = <button onClick={onTile2Clicked}>Tile2</button>;
+        displayArray[actualNumber3] = <button onClick={onTile3Clicked}>Tile3</button>;
 
-    // }
+        return (
+          <div>
+            {displayArray[0]}
+            {displayArray[1]}
+            {displayArray[2]}
+          </div>  
+        );
+
+    }
 
    return (
     <div>
+        {displayRandomOrder()}
         <Scoreboard score={score} bestScore={bestScore}/>
-        <button onClick={onTile1Clicked}>Tile1</button>
-        <button onClick={onTile2Clicked}>Tile2</button>
-        <button onClick={onTile3Clicked}>Tile3</button>
     </div>
    );
 }

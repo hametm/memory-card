@@ -1,11 +1,11 @@
 import React from "react";
-import Tiles from "./components/Tiles";
+import Cards from "./components/Cards";
 
 function App() {
   return (
     <div className="App">
       <h1>Memory Game</h1>
-      <Tiles />
+      <Cards />
     </div>
   );
 }

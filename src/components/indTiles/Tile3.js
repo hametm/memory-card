@@ -1,10 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Tile3 = (props) => {
-    const [clicked, setClicked] = useState(false);
+    const [click, setClick] = useState(false);
+    const [tally, setTally] = useState(0);
+    const [mark, setMark] = useState(false);
+
+    useEffect(() => {
+        if (tally === 2) {
+            setMark(true);
+            console.log("Points deducted");
+        }
+    }, [tally]);
+
+    useEffect(() => {
+        setClick(false);
+        setTally(0);
+        setMark(false);
+        // Score?
+    }, [mark])
+
+    const onTileClicked = () => {
+        setClick(true);
+        setTally(tally + 1);
+    }
 
     return (
-        <button>Tile3</button>
+        <button onClick={onTileClicked}>Tile3</button>
     );
 }
 

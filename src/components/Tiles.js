@@ -4,6 +4,7 @@ import Tile2 from "./indTiles/Tile2";
 import Tile3 from "./indTiles/Tile3";
 
 const Tiles = (props) => {
+    // const [score, setScore] = useState(0);
 
    return (
     <div>

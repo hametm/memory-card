@@ -4,9 +4,9 @@ const Scoreboard = (props) => {
 
 
     return (
-        <div>
-            Score: {props.score}
-            Best Score: {props.bestScore}
+        <div id="scoreboard">
+            <h2>Score: {props.score}</h2>
+            <h2>Top Score: {props.bestScore}</h2>
         </div>
     );
 }

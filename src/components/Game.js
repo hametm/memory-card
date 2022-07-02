@@ -54,14 +54,14 @@ const Game = (props) => {
 
     const displayCards = () => {
         const cards = [
-            <Card name="card1" src={conAir} onCardClick={onCardClick} />,
-            <Card name="card1" src={itCouldHappen} onCardClick={onCardClick} />,
-            <Card name="card3" src={momAndDad} onCardClick={onCardClick} />,
-            <Card name="card4" src={moonstruck} onCardClick={onCardClick} />,
-            <Card name="card5" src={nationalTreasure} onCardClick={onCardClick} />,
-            <Card name="card6" src={pig} onCardClick={onCardClick} />,
-            <Card name="card7" src={wickerMan} onCardClick={onCardClick} />,
-            <Card name="card8" src={vampiresKiss} onCardClick={onCardClick} />
+            <Card name="Con Air" src={conAir} onCardClick={onCardClick} />,
+            <Card name="It Could Happen to You" src={itCouldHappen} onCardClick={onCardClick} />,
+            <Card name="Mom and Dad" src={momAndDad} onCardClick={onCardClick} />,
+            <Card name="Moonstruck" src={moonstruck} onCardClick={onCardClick} />,
+            <Card name="National Treasure" src={nationalTreasure} onCardClick={onCardClick} />,
+            <Card name="Pig" src={pig} onCardClick={onCardClick} />,
+            <Card name="The Wicker Man" src={wickerMan} onCardClick={onCardClick} />,
+            <Card name="Vampire's Kiss" src={vampiresKiss} onCardClick={onCardClick} />
         ];
         getRandomOrder(cards);
 
@@ -82,9 +82,20 @@ const Game = (props) => {
     }
 
    return (
-    <div>
-        <Scoreboard score={score} bestScore={bestScore}/>
-        {displayCards()}
+    <div id="game">
+        <header>
+            <div id="headerText">
+                <h1>Memory Game</h1>
+                <p>Look, here's the deal. You click the pictures of me, but don't click the same one twice.
+                    I said, DON'T CLICK IT TWICE! How many TIMES do I have to REPEAT myself? 
+                    You click on ONE, then you find ANOTHER one, it's &mdash; 
+                </p>
+            </div>
+            <Scoreboard score={score} bestScore={bestScore}/>
+        </header>
+        <main>
+            {displayCards()}
+        </main>
     </div>
    );
 }

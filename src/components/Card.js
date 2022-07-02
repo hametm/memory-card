@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Scoreboard from "./Scoreboard";
+import React from "react";
 
 const Card = (props) => {
 
@@ -9,13 +8,11 @@ const Card = (props) => {
                 src={props.src} 
                 onClick={() => props.onCardClick(props.name)} 
                 alt={props.alt} 
-                // key={props.key} 
+                key={props.id} 
             />
             <h3>{props.name}</h3>
         </div>
     );
-
-
 }
 
 export default Card;

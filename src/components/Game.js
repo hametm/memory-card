@@ -10,6 +10,7 @@ import nationalTreasure from "../images/national-treasure.png";
 import pig from "../images/pig.png";
 import wickerMan from "../images/the-wicker-man.png";
 import vampiresKiss from "../images/vampires-kiss.png";
+// import uniqid from "uniqid";
 
 
 const Game = (props) => {
@@ -53,29 +54,24 @@ const Game = (props) => {
     }
 
     const displayCards = () => {
-        const cards = [
-            <Card name="Con Air" src={conAir} onCardClick={onCardClick} />,
-            <Card name="It Could Happen to You" src={itCouldHappen} onCardClick={onCardClick} />,
-            <Card name="Mom and Dad" src={momAndDad} onCardClick={onCardClick} />,
-            <Card name="Moonstruck" src={moonstruck} onCardClick={onCardClick} />,
-            <Card name="National Treasure" src={nationalTreasure} onCardClick={onCardClick} />,
-            <Card name="Pig" src={pig} onCardClick={onCardClick} />,
-            <Card name="The Wicker Man" src={wickerMan} onCardClick={onCardClick} />,
-            <Card name="Vampire's Kiss" src={vampiresKiss} onCardClick={onCardClick} />
+        const cardInfo = [
+            {name: "Con Air", src: conAir}, 
+            {name: "It Could Happen to You", src: itCouldHappen},
+            {name: "Mom and Dad", src: momAndDad}, 
+            {name: "Moonstruck", src: moonstruck}, 
+            {name: "National Treasure", src: nationalTreasure}, 
+            {name: "Pig", src: pig}, 
+            {name: "The Wicker Man", src: wickerMan}, 
+            {name: "Vampire's Kiss", src: vampiresKiss},
         ];
+        const cards = cardInfo.map(card => {
+            return <Card name={card.name} src={card.src} onCardClick={onCardClick} alt={card.name} />
+        });
         getRandomOrder(cards);
 
         return (
           <div id="allCards">
-            {cards[0]}
-            {cards[1]}
-            {cards[2]}
-            {cards[3]}
-            {cards[4]}
-            {cards[5]}
-            {cards[6]}
-            {cards[7]}
-            {cards[8]}
+            {cards}
           </div>  
         );
 

@@ -78,16 +78,14 @@ const Game = () => {
         <header>
             <div id="headerText">
                 <h1>Memory Game</h1>
-                <p>Look, here's the deal. You click the pictures of me, but don't click the same one twice.
-                    I said, DON'T CLICK IT TWICE! How many TIMES do I have to REPEAT myself? You click on ONE, 
-                    then you find ANOTHER one, it's &mdash; 
-                </p>
+                <p>Click the pics of Nic, but don't click them twice, otherwise he'll get angry!</p>
             </div>
             <Scoreboard score={score} bestScore={bestScore}/>
         </header>
         <main>
             {displayCards()}
         </main>
+        <footer>Made by Morgan</footer>
     </div>
    );
 }

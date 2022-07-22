@@ -7,10 +7,6 @@ body {
     background-color: #f8f5f5;
 }
 
-.App {
-   
-}
-
 #game {
     width: 100%;
     display: grid;
@@ -21,11 +17,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
     color: white;
-    padding: 1rem 7rem 2rem 7rem;
+    padding: .5rem 9rem 1rem 9rem;
     background-image: linear-gradient(90deg, #47cacc, #63bcc9, #cdb3d4, #e7b7c8, #ffbe88);
-    border-bottom: 2px solid grey;
 }
 
 #headerText {
@@ -40,13 +34,13 @@ header p {
     line-height: 1.25;
 }
 
-h1 {
+header h1 {
     font-family: 'Carter One', cursive;
     font-size: 3.25rem;
     margin: 0;
 }
 
-h2 {
+#scoreboard h2 {
     margin: 0;
 }
 
@@ -55,13 +49,11 @@ h2 {
     justify-content: flex-end;
     gap: 2rem;
     margin-top: 1rem;
-    /* min-width: 337px; */
 }
 
 main {
     width: 100%;
     display: grid;
-    /* place-items: center; */
 }
 
 figure {
@@ -88,8 +80,7 @@ figcaption {
     place-items: center;
     background-color: white;
     box-shadow: -2px 2px 5px grey;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    width: 200px;
 }
 
 .cardContainer:hover {
@@ -102,7 +93,7 @@ figcaption {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    margin: 2rem 7rem 4rem 7rem;
+    margin: 2rem 9rem;
     place-items: center;
 }
 
@@ -144,14 +135,24 @@ figcaption {
     animation: ease-out .4s green;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
+@media (max-width: 480px) {
+
+    
+
+    #allCards {
+        margin: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .cardContainer {
+        margin-right: .5rem;
+        margin-left: .5rem;
+    }
+
 }
 
-@media (max-width: 480px) {
+@media (max-width: 800px) {
 
     header {
         padding: 0;
@@ -188,34 +189,13 @@ footer {
     }
 
     .cardContainer {
-        margin-right: .5rem;
-        margin-left: .5rem;
+        width: 100%;
     }
 
 }
 
-@media (max-width: 800px) {
 
-    #allCards {
-        margin: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 1rem;
-    }
-
-}
-
-@media (max-width: 1045px) {
-
-    figcaption {
-        height: 45px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 1180px) {
+@media (min-width: 800px) and (max-width: 1180px) {
 
     header {
         padding: 1rem 2rem;
@@ -239,5 +219,29 @@ footer {
         margin-left: .5rem;
     }
 }
+
+@media (max-width: 1000px) {
+    #allCards {
+        margin: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+
+    .cardContainer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1045px) {
+
+    figcaption {
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 
 

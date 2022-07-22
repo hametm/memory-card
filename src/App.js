@@ -14,7 +14,7 @@ import vampiresKiss from "./styles/images/vampires-kiss.png";
 
 
 const App = () => {
-    const [score, setScore] = useState(6);
+    const [score, setScore] = useState(0);
     const [secretScore, setSecretScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
     const [clickedCards, setClickedCards] = useState([]);
@@ -80,14 +80,14 @@ const App = () => {
 
     const displayCards = () => {
         const cardInfo = [
-            {name: "Con Air", src: conAir, id: uuid()}, 
-            {name: "It Could Happen to You", src: itCouldHappen, id: uuid()},
-            {name: "Mom and Dad", src: momAndDad, id: uuid()}, 
-            {name: "Moonstruck", src: moonstruck, id: uuid()}, 
-            {name: "National Treasure", src: nationalTreasure, id: uuid()}, 
-            {name: "Pig", src: pig, id: uuid()}, 
-            {name: "The Wicker Man", src: wickerMan, id: uuid()}, 
-            {name: "Vampire's Kiss", src: vampiresKiss, id: uuid()}
+            {name: "Con Air (1997)", src: conAir, id: uuid()}, 
+            {name: "It Could Happen to You (1994)", src: itCouldHappen, id: uuid()},
+            {name: "Mom and Dad (2017)", src: momAndDad, id: uuid()}, 
+            {name: "Moonstruck (1987)", src: moonstruck, id: uuid()}, 
+            {name: "National Treasure (2004)", src: nationalTreasure, id: uuid()}, 
+            {name: "Pig (2021)", src: pig, id: uuid()}, 
+            {name: "The Wicker Man (2006)", src: wickerMan, id: uuid()}, 
+            {name: "Vampire's Kiss (1988)", src: vampiresKiss, id: uuid()}
         ];
         const cards = cardInfo.map(card => {
             return (
@@ -135,7 +135,6 @@ const App = () => {
         <main>
             {displayCards()}
         </main>
-        <footer>Made by Morgan</footer>
     </div>
    );
 }

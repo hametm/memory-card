@@ -14,22 +14,16 @@ import vampiresKiss from "./styles/images/vampires-kiss.png";
 
 
 const App = () => {
-    const [score, setScore] = useState(0);
+    const [score, setScore] = useState(6);
     const [secretScore, setSecretScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
     const [clickedCards, setClickedCards] = useState([]);
     const [flag, setFlag] = useState(false);
 
     useEffect(() => {
-        if (bestScore <= score) {
-            setBestScore(score);
-        }
-        if (secretScore > score) {
-            setBestScore(secretScore);
-        }
-        if (score === 0) {
-            setClickedCards([]);
-        }
+        if (bestScore <= score) setBestScore(score);
+        if (secretScore > score) setBestScore(secretScore);
+        if (score === 0) setClickedCards([]);
     }, [score]);
 
     useEffect(() => {
@@ -61,14 +55,14 @@ const App = () => {
     });
 
     const onCardClick = (name) => {
-        if (score === 7) startNewGame();
+        if (score === 7) {
+            setSecretScore(score);
+            startNewGame();
+        }
         else {
             setFlag(true);
-            if (clickedCards.includes(name)) {
-                resetGame();
-            } else {
-                incrementScore(name);
-            }
+            if (clickedCards.includes(name)) resetGame();
+            else incrementScore(name);
             setSecretScore(score);
             displayCards();
         }

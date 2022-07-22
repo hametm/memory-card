@@ -79,8 +79,6 @@ figcaption {
 }
 
 .card {
-    /* width: 174px;
-    margin-top: 13px; */
     width: 100%;
 }
 
@@ -89,11 +87,9 @@ figcaption {
     grid-template-columns: auto;
     place-items: center;
     background-color: white;
-    /* border: 1px solid rgb(212, 212, 212); */
     box-shadow: -2px 2px 5px grey;
-    /* width: 200px; */
-   margin-right: 1rem;
-   margin-left: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 .cardContainer:hover {
@@ -105,13 +101,7 @@ figcaption {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
     gap: 2rem;
-    place-items: center;
-    /* width: 82%;
-    justify-content: center; */
-    margin-top: 2rem;
-    margin-bottom: 4rem;
     margin: 2rem 7rem 4rem 7rem;
     place-items: center;
 }
@@ -119,12 +109,15 @@ figcaption {
 @keyframes red {
     from {
         background-color: white; 
+        outline: none;
     }
     50% {
         background-color: red;
+        outline: 4px solid red;
     }
     to {
         background-color: white;
+        outline: none;
     }
 }
 
@@ -135,12 +128,15 @@ figcaption {
 @keyframes green {
     from {
         background-color: white; 
+        outline: none;
     }
     50% {
         background-color: green;
+        outline: 4px solid green;
     }
     to {
         background-color: white;
+        outline: none;
     }
 }
 

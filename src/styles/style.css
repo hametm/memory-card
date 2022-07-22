@@ -15,7 +15,6 @@ body {
     width: 100%;
     display: grid;
     grid-template-rows: auto;
-    justify-items: center;
 }
 
 header {
@@ -24,7 +23,7 @@ header {
     align-items: flex-start;
     margin-bottom: 1rem;
     color: white;
-    padding: 1rem 7rem;
+    padding: 1rem 7rem 2rem 7rem;
     background-image: linear-gradient(90deg, #47cacc, #63bcc9, #cdb3d4, #e7b7c8, #ffbe88);
     border-bottom: 2px solid grey;
 }
@@ -32,6 +31,7 @@ header {
 #headerText {
     display: flex;
     flex-direction: column;
+    margin-right: 2rem;
 }
 
 header p {
@@ -52,15 +52,25 @@ h2 {
 
 #scoreboard {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 2rem;
     margin-top: 1rem;
+    /* min-width: 337px; */
 }
 
 main {
     width: 100%;
     display: grid;
     /* place-items: center; */
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin: .75rem;
+    font-size: 1.1rem;
 }
 
 .card {
@@ -81,12 +91,12 @@ main {
 #cardContainer:hover {
     cursor: pointer;
     transform: scale(1.05);
-
 }
 
 #allCards {
     display: grid;
-    /* grid-template-rows: 1fr 1fr; */
+    /* grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr); */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 2rem;
     /* place-items: center;
@@ -95,6 +105,7 @@ main {
     margin-top: 2rem;
     margin-bottom: 4rem;
     margin: 2rem 7rem 4rem 7rem;
+    place-items: center;
 }
 
 footer {
@@ -107,14 +118,30 @@ footer {
 @media (max-width: 480px) {
 
     header {
-        padding: 2rem;
+        padding: 0;
         flex-direction: column;
-        text-align: center;
         align-items: center;
+        border: none;
+        margin: 0;
+        text-align: center;
     }
 
     header h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
+    }
+
+    #headerText {
+        padding: 1.25rem 1.25rem .5rem 1.25rem;
+    }
+
+    #scoreboard {
+        padding: .5rem;
+        width: 100%;
+        background-color: rgb(188, 165, 165);
+    }
+
+    #scoreboard h2 {
+        font-size: 1.3rem;
     }
 
     #allCards {
@@ -126,12 +153,31 @@ footer {
         width: 150px;
     }
 
-    #cardContainer h3 {
-        margin: .5rem;
-        text-align: center;
-    }
-
     .card {
         width: 135px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1180px) {
+
+    header {
+        padding: 1rem 2rem;
+        justify-content: space-between;
+    }
+
+    #headerText {
+        width: 50%;
+    }
+
+    #scoreboard {
+
+    }
+
+    #scoreboard h2 {
+        font-size: 1.2rem;
+    }
+
+    #allCards {
+        margin: 2rem;
     }
 }

@@ -3,15 +3,15 @@ import React from "react";
 const Card = (props) => {
 
     return (
-        <div id="cardContainer">
+        <figure id="cardContainer">
             <img className="card" 
                 src={props.src} 
                 onClick={() => props.onCardClick(props.name)} 
                 alt={props.alt} 
                 key={props.id} 
             />
-            <h3>{props.name}</h3>
-        </div>
+            <figcaption>{props.name}</figcaption>
+        </figure>
     );
 }
 

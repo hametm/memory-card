@@ -14,7 +14,7 @@ import vampiresKiss from "./styles/images/vampires-kiss.png";
 
 
 const App = () => {
-    const [score, setScore] = useState(0);
+    const [score, setScore] = useState(6);
     const [secretScore, setSecretScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
     const [clickedCards, setClickedCards] = useState([]);
@@ -38,23 +38,47 @@ const App = () => {
             cards.forEach(card => {
                 card.classList.add("redAnimation");
             });
-        } else {
+        } 
+        return () => {
             cards.forEach(card => {
                 card.classList.remove("redAnimation");
             });
         }
     });
 
-    const onCardClick = (name) => {
-        setFlag(true);
-        if (clickedCards.includes(name)) {
-            setScore(0);
-        } else {
-            setClickedCards(clickedCards.concat(name));
-            setScore(x => x + 1);
+    useEffect(() => {
+        const cards = document.querySelectorAll(".cardContainer");
+        if (score === 7) {
+            cards.forEach(card => {
+                card.classList.add("greenAnimation");
+            });
+        } 
+        return () => {
+            cards.forEach(card => {
+                card.classList.remove("greenAnimation");
+            });
         }
-        setSecretScore(score);
-        displayCards();
+    });
+
+    const startNewGame = () => {
+        if (score === 7) {
+            setFlag(false);
+            resetGame();
+        }
+    }
+
+    const onCardClick = (name) => {
+        if (score === 7) startNewGame();
+        else {
+            setFlag(true);
+            if (clickedCards.includes(name)) {
+                resetGame();
+            } else {
+                incrementScore(name);
+            }
+            setSecretScore(score);
+            displayCards();
+        }
     }
 
     const changeOrder = (arr) => {
@@ -88,11 +112,21 @@ const App = () => {
                 />
             );
         });
+
         changeOrder(cards);
 
         return (
           <div id="allCards">{cards}</div>  
         );
+    }
+
+    const resetGame = () => {
+        setScore(0);
+    }
+
+    const incrementScore = (name) => {
+        setClickedCards(clickedCards.concat(name));
+        setScore(x => x + 1);
     }
 
    return (

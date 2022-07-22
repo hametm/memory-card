@@ -124,6 +124,22 @@ figcaption {
     animation: ease-out .4s red;
 }
 
+@keyframes green {
+    from {
+        background-color: white; 
+    }
+    50% {
+        background-color: green;
+    }
+    to {
+        background-color: white;
+    }
+}
+
+.greenAnimation {
+    animation: ease-out .4s green;
+}
+
 footer {
     display: flex;
     justify-content: center;

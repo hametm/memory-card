@@ -18,17 +18,7 @@ const App = () => {
     const [secretScore, setSecretScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
     const [clickedCards, setClickedCards] = useState([]);
-
-    const onCardClick = (name) => {
-        if (clickedCards.includes(name)) {
-            setScore(0);
-        } else {
-            setClickedCards(clickedCards.concat(name));
-            setScore(score + 1);
-        }
-        setSecretScore(score);
-        displayCards();
-    }
+    const [flag, setFlag] = useState(false);
 
     useEffect(() => {
         if (bestScore <= score) {
@@ -41,6 +31,31 @@ const App = () => {
             setClickedCards([]);
         }
     }, [score]);
+
+    useEffect(() => {
+        const cards = document.querySelectorAll(".cardContainer");
+        if (score === 0 && flag) {
+            cards.forEach(card => {
+                card.classList.add("redAnimation");
+            });
+        } else {
+            cards.forEach(card => {
+                card.classList.remove("redAnimation");
+            });
+        }
+    });
+
+    const onCardClick = (name) => {
+        setFlag(true);
+        if (clickedCards.includes(name)) {
+            setScore(0);
+        } else {
+            setClickedCards(clickedCards.concat(name));
+            setScore(x => x + 1);
+        }
+        setSecretScore(score);
+        displayCards();
+    }
 
     const changeOrder = (arr) => {
         let a, b;
@@ -64,7 +79,14 @@ const App = () => {
             {name: "Vampire's Kiss", src: vampiresKiss, id: uuid()}
         ];
         const cards = cardInfo.map(card => {
-            return <Card name={card.name} src={card.src} onCardClick={onCardClick} alt={card.name} key={card.id} />
+            return (
+                <Card name={card.name} 
+                    src={card.src} 
+                    onCardClick={onCardClick} 
+                    alt={card.name} 
+                    key={card.id} 
+                />
+            );
         });
         changeOrder(cards);
 

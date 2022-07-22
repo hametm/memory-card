@@ -3,7 +3,7 @@ import React from "react";
 const Card = (props) => {
 
     return (
-        <figure id="cardContainer">
+        <figure className="cardContainer">
             <img className="card" 
                 src={props.src} 
                 onClick={() => props.onCardClick(props.name)} 

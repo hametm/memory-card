@@ -69,8 +69,13 @@ figure {
 }
 
 figcaption {
-    margin: .75rem;
+    margin: .25rem .5rem;
     font-size: 1.1rem;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .card {
@@ -193,11 +198,24 @@ footer {
 
 }
 
-@media (min-width: 481px) and (max-width: 800px) {
+@media (max-width: 800px) {
+
     #allCards {
         margin: 1rem;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 1rem;
+    }
+
+}
+
+@media (max-width: 1045px) {
+
+    figcaption {
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 }
 

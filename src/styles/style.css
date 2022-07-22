@@ -74,8 +74,9 @@ figcaption {
 }
 
 .card {
-    width: 174px;
-    margin-top: 13px;
+    /* width: 174px;
+    margin-top: 13px; */
+    width: 100%;
 }
 
 .cardContainer {
@@ -83,9 +84,11 @@ figcaption {
     grid-template-columns: auto;
     place-items: center;
     background-color: white;
-    border: 1px solid rgb(212, 212, 212);
+    /* border: 1px solid rgb(212, 212, 212); */
     box-shadow: -2px 2px 5px grey;
-    width: 200px;
+    /* width: 200px; */
+   margin-right: 1rem;
+   margin-left: 1rem;
 }
 
 .cardContainer:hover {
@@ -95,12 +98,12 @@ figcaption {
 
 #allCards {
     display: grid;
-    /* grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(4, 1fr); */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
     gap: 2rem;
-    /* place-items: center;
-    width: 82%;
+    place-items: center;
+    /* width: 82%;
     justify-content: center; */
     margin-top: 2rem;
     margin-bottom: 4rem;
@@ -170,6 +173,7 @@ footer {
         padding: .5rem;
         width: 100%;
         background-color: rgb(188, 165, 165);
+        justify-content: center;
     }
 
     #scoreboard h2 {
@@ -177,16 +181,23 @@ footer {
     }
 
     #allCards {
-        margin: 2rem;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        margin: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
     }
 
     .cardContainer {
-        width: 150px;
+        margin-right: .5rem;
+        margin-left: .5rem;
     }
 
-    .card {
-        width: 135px;
+}
+
+@media (min-width: 481px) and (max-width: 800px) {
+    #allCards {
+        margin: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
     }
 }
 
@@ -201,10 +212,6 @@ footer {
         width: 50%;
     }
 
-    #scoreboard {
-
-    }
-
     #scoreboard h2 {
         font-size: 1.2rem;
     }
@@ -212,4 +219,11 @@ footer {
     #allCards {
         margin: 2rem;
     }
+
+    .cardContainer {
+        margin-right: .5rem;
+        margin-left: .5rem;
+    }
 }
+
+

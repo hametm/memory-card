@@ -14,7 +14,7 @@ import vampiresKiss from "./styles/images/vampires-kiss.png";
 
 
 const App = () => {
-    const [score, setScore] = useState(6);
+    const [score, setScore] = useState(0);
     const [secretScore, setSecretScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
     const [clickedCards, setClickedCards] = useState([]);
@@ -59,13 +59,6 @@ const App = () => {
             });
         }
     });
-
-    const startNewGame = () => {
-        if (score === 7) {
-            setFlag(false);
-            resetGame();
-        }
-    }
 
     const onCardClick = (name) => {
         if (score === 7) startNewGame();
@@ -127,6 +120,13 @@ const App = () => {
     const incrementScore = (name) => {
         setClickedCards(clickedCards.concat(name));
         setScore(x => x + 1);
+    }
+
+    const startNewGame = () => {
+        if (score === 7) {
+            setFlag(false);
+            resetGame();
+        }
     }
 
    return (

@@ -135,6 +135,45 @@ figcaption {
     animation: ease-out .4s green;
 }
 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+    border: 1px solid black;
+    border-radius: 12px;
+    background-image: linear-gradient(90deg, #ffbe88, #e7b7c8);
+    box-shadow: -2px 2px 5px grey;
+    animation: .5s linear fadeIn;
+    text-align: center;
+}
+
+.popup h1 {
+    font-size: 3rem;
+    font-family: 'Carter One', cursive;
+    margin: 0;
+}
+
+.popup p {
+    font-size: 1.2rem;
+}
+
 @media (max-width: 870px) {
 
     header {
@@ -176,6 +215,11 @@ figcaption {
         width: 150px;
         margin-right: .5rem;
         margin-left: .5rem;
+    }
+
+    .popup {
+        padding: 1rem 2rem;
+        width: 230px;
     }
 
 }

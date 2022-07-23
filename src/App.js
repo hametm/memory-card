@@ -54,6 +54,17 @@ const App = () => {
         }
     });
 
+    const announceWinner = () => {
+        if (score === 7) {
+            return (
+                <div className="popup">
+                    <h1>You win!</h1>
+                    <p>Click any card to play again.</p>
+                </div>
+            );
+        }
+    }
+
     const onCardClick = (name) => {
         if (score === 7) {
             setSecretScore(score);
@@ -133,6 +144,7 @@ const App = () => {
             <Scoreboard score={score} bestScore={bestScore}/>
         </header>
         <main>
+            {announceWinner()}
             {displayCards()}
         </main>
     </div>

@@ -135,24 +135,7 @@ figcaption {
     animation: ease-out .4s green;
 }
 
-@media (max-width: 480px) {
-
-    
-
-    #allCards {
-        margin: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 1rem;
-    }
-
-    .cardContainer {
-        margin-right: .5rem;
-        margin-left: .5rem;
-    }
-
-}
-
-@media (max-width: 800px) {
+@media (max-width: 870px) {
 
     header {
         padding: 0;
@@ -172,7 +155,8 @@ figcaption {
     }
 
     #scoreboard {
-        padding: .5rem;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
         width: 100%;
         background-color: rgb(188, 165, 165);
         justify-content: center;
@@ -184,18 +168,20 @@ figcaption {
 
     #allCards {
         margin: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 1rem;
     }
 
     .cardContainer {
-        width: 100%;
+        width: 150px;
+        margin-right: .5rem;
+        margin-left: .5rem;
     }
 
 }
 
 
-@media (min-width: 800px) and (max-width: 1180px) {
+@media (min-width: 871px) and (max-width: 1180px) {
 
     header {
         padding: 1rem 2rem;
@@ -211,24 +197,14 @@ figcaption {
     }
 
     #allCards {
-        margin: 2rem;
-    }
+        margin: 1rem;
+        gap: 1rem;
+    } 
 
     .cardContainer {
+        width: 180px;
         margin-right: .5rem;
         margin-left: .5rem;
-    }
-}
-
-@media (max-width: 1000px) {
-    #allCards {
-        margin: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 1rem;
-    }
-
-    .cardContainer {
-        width: 100%;
     }
 }
 
@@ -241,7 +217,7 @@ figcaption {
         align-items: center;
         text-align: center;
     }
-}
+} 
 
 
 

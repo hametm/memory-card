@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/memory-card/static/css/main.2a9534eb.css",
-    "main.js": "/memory-card/static/js/main.fec0d351.js",
+    "main.css": "/memory-card/static/css/main.65ea203f.css",
+    "main.js": "/memory-card/static/js/main.b20c2a9d.js",
     "static/media/the-wicker-man.png": "/memory-card/static/media/the-wicker-man.0996d22293c42ee0837d.png",
     "static/media/vampires-kiss.png": "/memory-card/static/media/vampires-kiss.4ec08aa9a6914691a5a3.png",
     "static/media/mom-and-dad.png": "/memory-card/static/media/mom-and-dad.8ba1ae418a4283ffebbd.png",
@@ -11,11 +11,11 @@
     "static/media/moonstruck.png": "/memory-card/static/media/moonstruck.01385d5b2ed63ea7ff82.png",
     "static/media/national-treasure.png": "/memory-card/static/media/national-treasure.85aeaa10a46c392514e2.png",
     "index.html": "/memory-card/index.html",
-    "main.2a9534eb.css.map": "/memory-card/static/css/main.2a9534eb.css.map",
-    "main.fec0d351.js.map": "/memory-card/static/js/main.fec0d351.js.map"
+    "main.65ea203f.css.map": "/memory-card/static/css/main.65ea203f.css.map",
+    "main.b20c2a9d.js.map": "/memory-card/static/js/main.b20c2a9d.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a9534eb.css",
-    "static/js/main.fec0d351.js"
+    "static/css/main.65ea203f.css",
+    "static/js/main.b20c2a9d.js"
   ]
 }

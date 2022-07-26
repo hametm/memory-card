@@ -12,7 +12,6 @@ import pig from "./styles/images/pig.png";
 import wickerMan from "./styles/images/the-wicker-man.png";
 import vampiresKiss from "./styles/images/vampires-kiss.png";
 
-
 const App = () => {
     const [score, setScore] = useState(0);
     const [secretScore, setSecretScore] = useState(0);

@@ -135,7 +135,6 @@ figcaption {
     animation: ease-out .4s green;
 }
 
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -223,7 +222,6 @@ figcaption {
     }
 
 }
-
 
 @media (min-width: 871px) and (max-width: 1180px) {
 
